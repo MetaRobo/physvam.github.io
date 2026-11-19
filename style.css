@@ -92,6 +92,7 @@ h1,h2,h3,h4,.project-name,.wordmark,.wordmark span,#real-world .section-head h2{
 /* Moderate desktop figure widths; smaller screens retain the available width. */
 #overview .paper-figure{max-width:960px;margin-inline:auto}
 #method .paper-figure{max-width:1000px;margin-inline:auto}
+#value .value-player{max-width:1000px;margin-inline:auto}
 #results .wrap>.pdf-table-card,#results .ablation-tables{max-width:1000px;margin-inline:auto}
 
 /* Main comparisons first, followed by paired ablations. */
