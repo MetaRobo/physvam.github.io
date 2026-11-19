@@ -1,0 +1,10 @@
+# Keep manuscript documents, archives and nested clones out of this website.
+*.[pP][dD][fF]
+*.tex
+*.bib
+*.doc
+*.docx
+*.zip
+/assets/paper/
+/physvam.github.io/
+/work/

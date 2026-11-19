@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="96" height="96" viewBox="0 0 96 96">
+  <title>PhysVAM</title>
+  <desc>A V-shaped robotic gripper, a golden target cube, and three future motion positions.</desc>
+  <rect width="96" height="96" rx="23" fill="#344b93"/>
+  <path d="M22 37 40 69Q48 82 56 69L74 37" fill="none" stroke="#fff" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="m22 37 11-4m41 4-11-4" fill="none" stroke="#fff" stroke-width="7" stroke-linecap="round"/>
+  <path d="m48 24 12 7v14l-12 7-12-7V31Z" fill="#f2bb61"/>
+  <path d="m36 31 12 7 12-7M48 38v14" fill="none" stroke="#344b93" stroke-width="2.5" stroke-linejoin="round"/>
+  <circle cx="59" cy="18" r="3" fill="#f2bb61"/>
+  <circle cx="70" cy="14" r="2.6" fill="#f2bb61" opacity=".72"/>
+  <circle cx="81" cy="15" r="2.2" fill="#f2bb61" opacity=".42"/>
+</svg>

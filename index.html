@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="PhysVAM learns multi-horizon future-value representations to guide dynamic object manipulation.">
+  <meta name="theme-color" content="#4058a3">
+  <meta property="og:title" content="PhysVAM: Physics-oriented Future Value Action Model">
+  <meta property="og:description" content="Task-directed foresight for dynamic object manipulation.">
+  <title>PhysVAM — Future Values for Dynamic Manipulation</title>
+  <link rel="icon" href="assets/favicon.svg?v=29" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css?v=37">
+  <script src="config.js?v=38" defer></script>
+  <script src="gallery-data.js?v=23" defer></script>
+  <script src="script.js?v=38" defer></script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="nav-shell">
+  <nav class="nav" aria-label="Main navigation">
+    <a class="wordmark" href="#top"><img class="brand-icon" src="assets/favicon.svg?v=29" width="32" height="32" alt=""> Phys<span>VAM</span></a>
+    <div class="nav-links"><a href="#abstract">Abstract</a><a href="#overview">Overview</a><a href="#method">Method</a><a href="#value">Value</a><a href="#results">Results</a><a href="#real-world">Real World</a></div>
+  </nav>
+</header>
+<main id="main">
+  <section class="hero wrap" id="top">
+    <p class="eyebrow">Dynamic object manipulation</p>
+    <h1><span class="project-name"><img class="hero-icon" src="assets/favicon.svg?v=29" width="72" height="72" alt="">PhysVAM</span>Physics-oriented Future Value Action Model<br class="wide-only"> for Dynamic Object Manipulation</h1>
+    <div id="authors" class="authors" hidden></div>
+    <p class="hero-line">Anticipate task progress. Guide dynamic actions.</p>
+    <div class="release-links" aria-label="Project releases"><a class="release-link" id="arxiv-link" role="link" aria-disabled="true" tabindex="0" aria-label="arXiv — coming soon" title="Coming soon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h8l4 4v14H6z"/><path d="M14 3v5h4M9 12h6M9 16h6"/></svg><span>arXiv</span></a><a class="release-link" id="code-link" role="link" aria-disabled="true" tabindex="0" aria-label="Code — coming soon" title="Coming soon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 7-5 5 5 5m8-10 5 5-5 5m-3-13-2 20"/></svg><span>Code</span></a><a class="release-link" id="dataset-link" role="link" aria-disabled="true" tabindex="0" aria-label="Dataset — coming soon" title="Coming soon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v14c0 4 16 4 16 0V5M4 12c0 4 16 4 16 0"/></svg><span>Dataset</span></a><a class="release-link" id="model-link" role="link" aria-disabled="true" tabindex="0" aria-label="Model — coming soon" title="Coming soon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 3 9 5v9l-9 5-9-5V8zM3 8l9 5 9-5M12 13v9M7.5 5.5l9 5"/></svg><span>Model</span></a></div>
+    <div class="links secondary-links"><a class="button" href="#demo"><span aria-hidden="true">▷</span> Demo</a><a class="button" href="#value"><span aria-hidden="true">↗</span> Value in Action</a></div>
+    <figure class="hero-video" id="demo">
+      <div class="demo-stage">
+        <video id="demo-video" controls playsinline preload="none" poster="assets/images/demo-cover.jpg?v=25" src="assets/videos/demo.mp4?v=25" aria-label="PhysVAM concept, method, real-world demonstrations, and results"></video>
+        <img id="demo-cover" class="demo-cover" src="assets/images/demo-cover.jpg?v=25" width="1920" height="1080" alt="" aria-hidden="true" decoding="sync" fetchpriority="high" hidden>
+        <button id="demo-start" class="demo-start" aria-label="Play PhysVAM demo" hidden><span class="demo-play-icon" aria-hidden="true">▶</span></button>
+      </div>
+      <figcaption><span>Future Values. Dynamic Actions.</span> Concept, method, value predictions, demonstrations, and results.</figcaption>
+    </figure>
+    <div class="headline-stats" aria-label="Key results">
+      <div><strong>58.83<span>%</span></strong><p>Simulation success</p><small>+27.00 pp over PUMA</small></div>
+      <div><strong>64.17<span>%</span></strong><p>Real-world success</p><small>+27.50 pp over PUMA</small></div>
+      <div><strong>4<span> horizons</span></strong><p>Future task values</p><small>h = 4, 8, 16, 32 steps</small></div>
+    </div>
+    <p class="stat-note">Simulation: paper Table 1. Real world: macro-average over three scenarios, paper Table 8.</p>
+  </section>
+
+  <section id="abstract" class="section wrap abstract-section" aria-labelledby="abstract-title">
+    <div class="section-head"><h2 id="abstract-title">Abstract</h2></div>
+    <p class="abstract-copy">Predicting future scene or object states does not necessarily reveal how robot–object interactions will advance or hinder a task. This challenge is particularly pronounced in dynamic robotic manipulation, where objects continue moving during perception and execution. Effective action generation therefore requires not only modeling object dynamics but also anticipating how future interactions will shape task progress. To this end, we propose PhysVAM, a Physics-oriented Future Value Action Model that represents anticipated interactions through their effects on future task progress. This value-based formulation provides task-directed foresight without reconstructing future visual states. Conditioned on current observations and historical object and robot motion, PhysVAM jointly learns action generation and multi-horizon future-value prediction. The value branch learns horizon-specific latent representations through future task-value prediction from successful and failed trajectories. These future-value representations are integrated into the action policy through gated cross-attention, guiding action generation toward interactions that facilitate task success. Extensive simulation and real-world experiments demonstrate superior task success, with absolute success-rate improvements of 27.0 and 27.5 percentage points over the strongest baselines in simulation and real-world tasks, respectively.</p>
+  </section>
+
+  <section id="overview" class="section wrap">
+    <div class="section-head"><p class="eyebrow">The idea</p><h2>Guiding actions with future values</h2><p>Guide action generation toward interactions that facilitate task success.</p></div>
+    <p class="prose">Moving objects can turn a promising grasp into a missed interaction. PhysVAM predicts how future robot–object interactions will advance or hinder task progress, using current observations and object and robot motion histories. The resulting multi-horizon value representations provide task-directed guidance for action generation, helping the policy choose interactions that move the task toward completion.</p>
+    <figure class="paper-figure"><a href="assets/images/motivation.webp?v=11" target="_blank" rel="noopener" aria-label="Open motivation figure at full resolution"><img src="assets/images/motivation.webp?v=11" alt="Visual future modeling compared with multi-horizon future-value modeling; predicted values track interaction setbacks and progress." loading="lazy" width="2400" height="1117"></a><figcaption>Future-value representations guide actions toward interactions that advance task progress.</figcaption></figure>
+  </section>
+
+  <section id="method" class="section tinted">
+    <div class="wrap">
+      <div class="section-head"><p class="eyebrow">Method</p><h2>Motion. Value. Action.</h2><p>Historical motion provides context. Future values provide task-directed guidance.</p></div>
+      <figure class="paper-figure"><a href="assets/images/method.webp?v=11" target="_blank" rel="noopener" aria-label="Open architecture figure at full resolution"><img src="assets/images/method.webp?v=11" alt="PhysVAM architecture: observation and motion encoding, multi-horizon ValueDiT, and gated cross-attention into ActionDiT." loading="lazy" width="2400" height="945"></a></figure>
+      <div class="method-steps">
+        <div><span class="step">01</span><h3>Encode motion</h3><p>Object positions and estimated velocities condition ActionDiT. Recent robot actions provide temporal context to ValueDiT.</p></div>
+        <div><span class="step">02</span><h3>Predict progress</h3><p>Horizon-specific queries learn future task-value representations at 4, 8, 16, and 32 steps.</p></div>
+        <div><span class="step">03</span><h3>Guide actions</h3><p>Gated cross-attention injects latent value features into the action branch to generate a 32-step action chunk.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="value" class="section wrap">
+    <div class="section-head"><p class="eyebrow">See the predictions</p><h2>Value in Action</h2><p>Follow predicted task progress as interactions unfold.</p></div>
+    <div class="tabs" id="value-tabs" role="tablist" aria-label="Value visualization cases">
+      <button role="tab" id="vtab-future-values" aria-selected="true" aria-controls="value-panel" data-value="future-values">Future Values</button>
+      <button role="tab" id="vtab-miss-recover" aria-selected="false" tabindex="-1" aria-controls="value-panel" data-value="miss-recover">Miss &amp; Recover</button>
+      <button role="tab" id="vtab-lift-miss" aria-selected="false" tabindex="-1" aria-controls="value-panel" data-value="lift-miss">Lift vs. Miss</button>
+    </div>
+    <div id="value-panel" role="tabpanel" aria-labelledby="vtab-future-values">
+      <figure class="value-player"><video id="value-video" src="assets/videos/future-values.mp4" poster="assets/images/future-values.jpg" controls playsinline preload="metadata" aria-label="Future Values"></video><figcaption id="value-caption">Simulation rollouts with predicted values at h = 4, 8, 16, and 32 steps.</figcaption></figure>
+    </div>
+    <div class="value-finding"><span class="finding-label">Interaction-level evidence</span><p>Across 220 grasp attempts, the mean predicted value change at h = 4 is <strong>+0.254 for lifts</strong> and <strong>−0.185 for misses</strong>.</p></div>
+  </section>
+
+  <section id="results" class="section tinted">
+    <div class="wrap">
+      <div class="section-head"><p class="eyebrow">Evaluation</p><h2>Results</h2><p>Simulation, real-world results, and ablations from the paper.</p></div>
+      <article class="pdf-table-card"><h3>Simulation</h3><figure><a href="assets/images/paper-table-1.png" target="_blank" rel="noopener" aria-label="Open original Table 1 at full resolution"><img src="assets/images/paper-table-1.png" alt="Original Table 1: full simulation comparison and transferability of value guidance, including all scenes, mean and standard deviation, success rates and completion times." width="3000" height="1092" loading="lazy"></a></figure></article>
+      <article class="pdf-table-card real-world-table" id="real-world-results"><h3>Real-world Results</h3><div class="table-scroll"><table><caption>Real-world success rate (%)</caption><thead><tr><th scope="col">Method</th><th scope="col">Conveyor</th><th scope="col">Turntable</th><th scope="col">Rolling</th><th scope="col">Average</th></tr></thead><tbody><tr><th scope="row">DynamicVLA</th><td>40.0</td><td>22.5</td><td>25.0</td><td>29.17</td></tr><tr><th scope="row">PUMA</th><td>47.5</td><td>32.5</td><td>30.0</td><td>36.67</td></tr><tr class="highlight"><th scope="row">PhysVAM</th><td>72.5</td><td>65.0</td><td>55.0</td><td>64.17</td></tr></tbody></table></div></article>
+      <div class="ablation-tables" id="ablations">
+        <article class="pdf-table-card"><h3>Value Ablations</h3><figure><a href="assets/images/paper-table-2.png" target="_blank" rel="noopener" aria-label="Open original Table 2 at full resolution"><img src="assets/images/paper-table-2.png" alt="Original Table 2: value branch, value representations, multi-horizon prediction, and future progress prediction ablations." width="1446" height="1368" loading="lazy"></a></figure></article>
+        <article class="pdf-table-card"><h3>Motion Ablations</h3><figure><a href="assets/images/paper-table-3.png" target="_blank" rel="noopener" aria-label="Open original Table 3 at full resolution"><img src="assets/images/paper-table-3.png" alt="Original Table 3: object-motion representations and robot-motion history ablations." width="1446" height="1104" loading="lazy"></a></figure></article>
+      </div>
+    </div>
+  </section>
+
+  <section id="real-world" class="section wrap">
+    <div class="section-head"><p class="eyebrow">Real-world comparisons</p><h2>Different motions. Timely actions.</h2></div>
+    <div class="task-comparisons"><article class="task-comparison " id="task-conveyor-cube"><h3>Conveyor · Cube</h3><p class="task-prompt"><strong>Prompt:</strong> Transfer the moving cube into the basket.</p><div class="task-methods"><figure class="comparison "><div class="video-heading"><h4>DynamicVLA</h4><span class="outcome failure" role="img" aria-label="failure">✗</span></div><video controls playsinline muted preload="none" src="assets/videos/conveyor-cube-dynamicvla.mp4?v=26" poster="assets/images/conveyor-cube-dynamicvla.jpg?v=26" aria-label="Conveyor · Cube, DynamicVLA"></video></figure><figure class="comparison "><div class="video-heading"><h4>PUMA</h4><span class="outcome failure" role="img" aria-label="failure">✗</span></div><video controls playsinline muted preload="none" src="assets/videos/conveyor-cube-puma.mp4?v=26" poster="assets/images/conveyor-cube-puma.jpg?v=26" aria-label="Conveyor · Cube, PUMA"></video></figure><figure class="comparison ours"><div class="video-heading"><h4>PhysVAM</h4><span class="outcome success" role="img" aria-label="success">✓</span></div><video controls playsinline muted preload="none" src="assets/videos/conveyor-cube-ours.mp4?v=21" poster="assets/images/conveyor-cube-ours.jpg?v=21" aria-label="Conveyor · Cube, PhysVAM"></video></figure></div><div class="task-playback"><button class="button compare-toggle" aria-label="Play Conveyor · Cube comparison">Play</button><span class="task-play-status" role="status"></span></div></article><article class="task-comparison " id="task-conveyor-orange"><h3>Conveyor · Orange</h3><p class="task-prompt"><strong>Prompt:</strong> Put the moving orange in the basket.</p><div class="task-methods"><figure class="comparison "><div class="video-heading"><h4>DynamicVLA</h4><span class="outcome failure" role="img" aria-label="failure">✗</span></div><video controls playsinline muted preload="none" src="assets/videos/conveyor-orange-dynamicvla.mp4?v=26" poster="assets/images/conveyor-orange-dynamicvla.jpg?v=26" aria-label="Conveyor · Orange, DynamicVLA"></video></figure><figure class="comparison "><div class="video-heading"><h4>PUMA</h4><span class="outcome failure" role="img" aria-label="failure">✗</span></div><video controls playsinline muted preload="none" src="assets/videos/conveyor-orange-puma.mp4?v=26" poster="assets/images/conveyor-orange-puma.jpg?v=26" aria-label="Conveyor · Orange, PUMA"></video></figure><figure class="comparison ours"><div class="video-heading"><h4>PhysVAM</h4><span class="outcome success" role="img" aria-label="success">✓</span></div><video controls playsinline muted preload="none" src="assets/videos/conveyor-orange-ours.mp4?v=30" poster="assets/images/conveyor-orange-ours.jpg?v=30" aria-label="Conveyor · Orange, PhysVAM"></video></figure></div><div class="task-playback"><button class="button compare-toggle" aria-label="Play Conveyor · Orange comparison">Play</button><span class="task-play-status" role="status"></span></div></article><article class="task-comparison " id="task-turntable-cup"><h3>Turntable · Cup</h3><p class="task-prompt"><strong>Prompt:</strong> Move the moving cup into the open-top box.</p><div class="task-methods"><figure class="comparison "><div class="video-heading"><h4>DynamicVLA</h4><span class="outcome failure" role="img" aria-label="failure">✗</span></div><video controls playsinline muted preload="none" src="assets/videos/turntable-cup-dynamicvla.mp4?v=27" poster="assets/images/turntable-cup-dynamicvla.jpg?v=7" aria-label="Turntable · Cup, DynamicVLA"></video></figure><figure class="comparison "><div class="video-heading"><h4>PUMA</h4><span class="outcome failure" role="img" aria-label="failure">✗</span></div><video controls playsinline muted preload="none" src="assets/videos/turntable-cup-puma.mp4?v=22" poster="assets/images/turntable-cup-puma.jpg?v=22" aria-label="Turntable · Cup, PUMA"></video></figure><figure class="comparison ours"><div class="video-heading"><h4>PhysVAM</h4><span class="outcome success" role="img" aria-label="success">✓</span></div><video controls playsinline muted preload="none" src="assets/videos/turntable-cup-ours.mp4?v=21" poster="assets/images/turntable-cup-ours.jpg?v=21" aria-label="Turntable · Cup, PhysVAM"></video></figure></div><div class="task-playback"><button class="button compare-toggle" aria-label="Play Turntable · Cup comparison">Play</button><span class="task-play-status" role="status"></span></div></article><article class="task-comparison " id="task-turntable-bread"><h3>Turntable · Bread</h3><p class="task-prompt"><strong>Prompt:</strong> Place the moving bread on the plate.</p><div class="task-methods"><figure class="comparison "><div class="video-heading"><h4>DynamicVLA</h4><span class="outcome failure" role="img" aria-label="failure">✗</span></div><video controls playsinline muted preload="none" src="assets/videos/turntable-bread-dynamicvla.mp4?v=22" poster="assets/images/turntable-bread-dynamicvla.jpg?v=22" aria-label="Turntable · Bread, DynamicVLA"></video></figure><figure class="comparison "><div class="video-heading"><h4>PUMA</h4><span class="outcome failure" role="img" aria-label="failure">✗</span></div><video controls playsinline muted preload="none" src="assets/videos/turntable-bread-puma.mp4?v=7" poster="assets/images/turntable-bread-puma.jpg?v=7" aria-label="Turntable · Bread, PUMA"></video></figure><figure class="comparison ours"><div class="video-heading"><h4>PhysVAM</h4><span class="outcome success" role="img" aria-label="success">✓</span></div><video controls playsinline muted preload="none" src="assets/videos/turntable-bread-ours.mp4?v=21" poster="assets/images/turntable-bread-ours.jpg?v=21" aria-label="Turntable · Bread, PhysVAM"></video></figure></div><div class="task-playback"><button class="button compare-toggle" aria-label="Play Turntable · Bread comparison">Play</button><span class="task-play-status" role="status"></span></div></article><article class="task-comparison rolling-task" id="task-rolling-bottle"><h3>Rolling · Bottle</h3><p class="task-prompt"><strong>Prompt:</strong> Pick up the rolling white bottle and place it in the basket.</p><div class="task-methods"><figure class="comparison "><div class="video-heading"><h4>DynamicVLA</h4><span class="outcome failure" role="img" aria-label="failure">✗</span></div><video controls playsinline muted preload="none" src="assets/videos/rolling-bottle-dynamicvla.mp4?v=31" poster="assets/images/rolling-bottle-dynamicvla.jpg?v=31" aria-label="Rolling · Bottle, DynamicVLA"></video></figure><figure class="comparison "><div class="video-heading"><h4>PUMA</h4><span class="outcome failure" role="img" aria-label="failure">✗</span></div><video controls playsinline muted preload="none" src="assets/videos/rolling-bottle-puma.mp4?v=31" poster="assets/images/rolling-bottle-puma.jpg?v=31" aria-label="Rolling · Bottle, PUMA"></video></figure><figure class="comparison ours"><div class="video-heading"><h4>PhysVAM</h4><span class="outcome success" role="img" aria-label="success">✓</span></div><video controls playsinline muted preload="none" src="assets/videos/rolling-bottle-ours.mp4?v=33" poster="assets/images/rolling-bottle-ours.jpg?v=33" aria-label="Rolling · Bottle, PhysVAM"></video></figure></div><div class="task-playback"><button class="button compare-toggle" aria-label="Play Rolling · Bottle comparison">Play</button><span class="task-play-status" role="status"></span></div></article></div>
+    
+
+  <section id="showcase" class="showcase" aria-labelledby="showcase-heading" aria-roledescription="carousel">
+    <div class="section-head"><h2 id="showcase-heading">PhysVAM Demonstrations</h2></div>
+    <div class="gallery-carousel" tabindex="0" aria-label="PhysVAM demonstrations. Use left and right arrows to browse.">
+      <button id="gallery-prev" class="gallery-arrow" aria-label="Previous videos"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 5-7 7 7 7"/></svg></button>
+      <div class="gallery-strip">
+        <div class="gallery-tile"><video id="gallery-video-0" controls playsinline muted preload="none" aria-label="PhysVAM demonstration"></video><span class="zero-shot-label" hidden>zero-shot</span><span id="gallery-count" class="gallery-count" title="First visible video / total videos" aria-live="polite">1 / 12</span></div>
+        <div class="gallery-tile"><video id="gallery-video-1" controls playsinline muted preload="none" aria-label="PhysVAM demonstration"></video><span class="zero-shot-label" hidden>zero-shot</span></div>
+        <div class="gallery-tile"><video id="gallery-video-2" controls playsinline muted preload="none" aria-label="PhysVAM demonstration"></video><span class="zero-shot-label" hidden>zero-shot</span></div>
+      </div>
+      <button id="gallery-next" class="gallery-arrow" aria-label="Next videos"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 5 7 7-7 7"/></svg></button>
+    </div>
+    <span id="gallery-announcement" class="sr-only" aria-live="polite"></span>
+  </section>
+  </section>
+
+</main>
+<footer class="wrap"><a class="wordmark" href="#top">Phys<span>VAM</span></a><p>Physics-oriented Future Value Action Model</p><a href="#top">Back to top ↑</a></footer>
+</body>
+</html>
