@@ -89,5 +89,10 @@ h1,h2,h3,h4,.project-name,.wordmark,.wordmark span,#real-world .section-head h2{
 /* Original real-world result plot and icon-only Demo playback. */
 .real-world-results{margin-top:26px}.real-world-results figure{width:100%;max-width:720px;margin-inline:auto}.real-world-results img{min-width:0!important}.demo-start{gap:0}.demo-start>.demo-play-icon:last-child{padding:0 0 0 3px;background:#4058a3;border-radius:50%;font-family:Arial,sans-serif}
 
+/* Moderate desktop figure widths; smaller screens retain the available width. */
+#overview .paper-figure{max-width:960px;margin-inline:auto}
+#method .paper-figure{max-width:1000px;margin-inline:auto}
+#results .wrap>.pdf-table-card,#results .ablation-tables{max-width:1000px;margin-inline:auto}
+
 /* Main comparisons first, followed by paired ablations. */
 .real-world-table{margin-top:26px}.real-world-table .table-scroll{max-width:960px;margin:0 auto}.real-world-table table{font-size:16px}.real-world-table caption{font-size:14px}.real-world-table thead th{font-size:14px}.real-world-table th,.real-world-table td{padding:14px 18px}@media(max-width:640px){.real-world-table{margin-top:20px}.real-world-table th,.real-world-table td{padding:11px 12px;font-size:14px}}
