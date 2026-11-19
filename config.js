@@ -15,7 +15,7 @@ window.PHYSVAM_CONFIG = {
   ],
   affiliations: [
     { number: '1', name: 'Hong Kong Polytechnic University' },
-    { number: '2', name: 'Tencent', newRow: true },
+    { number: '2', name: 'Robotics X, Tencent', newRow: true },
     { number: '3', name: 'University of Cambridge' }
   ],
   arxivUrl: '', // Fill release URLs to activate the four header buttons.
